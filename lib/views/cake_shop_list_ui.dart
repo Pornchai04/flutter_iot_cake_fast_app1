@@ -1,15 +1,16 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_iot_cake_fast_app1/Models/cake_shop.dart';
+import 'package:flutter_iot_cake_fast_app1/views/cake_shop_dctall_ui.dart';
 
-class CakShoopListUi extends StatefulWidget {
-  const CakShoopListUi({super.key});
+class CakeShooplistUi extends StatefulWidget {
+  const CakeShooplistUi({super.key});
 
   @override
-  State<CakShoopListUi> createState() => _CakShoopListUiState();
+  State<CakeShooplistUi> createState() => _CakeShooplistUiState();
 }
 
-class _CakShoopListUiState extends State<CakShoopListUi> {
+class _CakeShooplistUiState extends State<CakeShooplistUi> {
   //สร้างตัวแปรเก็บรูปที่จะเอาไปแสดงที่ CarouselSlider
   List<String> imgCakeShop = [
     'assets/images/ck01.png',
@@ -178,7 +179,16 @@ class _CakShoopListUiState extends State<CakShoopListUi> {
                 },
                 itemBuilder: (context, index) {
                   return ListTile(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CakeShopDctallUi(
+                            cakeShopDetail: cakeShop[index],
+                          ),
+                        ),
+                      );
+                    },
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(5),
                       child: Image.asset(

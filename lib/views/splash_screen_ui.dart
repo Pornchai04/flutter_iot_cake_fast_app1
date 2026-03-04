@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iot_cake_fast_app1/views/cake_shop_dctall_ui.dart';
+import 'package:flutter_iot_cake_fast_app1/views/cake_shop_list_ui.dart';
 
 class SplashScreenUi extends StatefulWidget {
   const SplashScreenUi({super.key});
@@ -15,7 +16,7 @@ class _SplashScreenUiState extends State<SplashScreenUi> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => CakeShopDctallUi(),
+          builder: (context) => CakeShooplistUi(),
         ),
       );
     });
